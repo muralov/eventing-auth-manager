@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  eventing-auth-manager:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-05-17T18:35:49.712279+02:00"
+    description: A Helm chart for Eventing Auth Manager component
+    digest: 673e71d64fbfa9ef4f2c766f8972d3e3844b65edd38c9f14aa7bf9bb91fecbbd
+    name: eventing-auth-manager
+    type: application
+    urls:
+    - https://muralov.github.io/eventing-auth-manager/config/helm/eventing-auth-manager/eventing-auth-manager-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-17T18:35:49.711584+02:00"
