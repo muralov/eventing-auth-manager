@@ -1,6 +1,10 @@
 
 # Image URL to use all building/pushing image targets
-IMG ?= controller:latest
+IMG_REPO ?= controller
+IMG_TAG ?= latest
+IMG ?= $(IMG_REPO):$(IMG_TAG)
+# helm chart version
+CHART_VERSION ?= 0.1.0
 # ENVTEST_K8S_VERSION refers to the version of kubebuilder assets to be downloaded by envtest binary.
 ENVTEST_K8S_VERSION = 1.26.0
 
@@ -161,3 +165,6 @@ $(CONTROLLER_GEN): $(LOCALBIN)
 envtest: $(ENVTEST) ## Download envtest-setup locally if necessary.
 $(ENVTEST): $(LOCALBIN)
 	test -s $(LOCALBIN)/setup-envtest || GOBIN=$(LOCALBIN) go install sigs.k8s.io/controller-runtime/tools/setup-envtest@latest
+
+build-helm-chart: manifests kustomize
+	./scripts/build-helm-chart.sh
